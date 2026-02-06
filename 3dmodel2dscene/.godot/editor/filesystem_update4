@@ -1,5 +1,3 @@
 res://main.tscn
-res://player.gd
-res://running.tscn
-res://runningAnimation.res
 res://running.gdshader
+res://running.tscn
