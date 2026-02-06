@@ -1,0 +1,11 @@
+Camera2D
+TextureRect
+CSGCylinder3D
+BoneAttachment3D
+AnimationPlayer
+DirectionalLight3D
+Camera3D
+SubViewport
+SubViewportContainer
+CollisionShape2D
+CharacterBody2D

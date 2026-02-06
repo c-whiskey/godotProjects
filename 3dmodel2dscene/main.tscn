@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkq06bianyrxi"]
+
+[ext_resource type="Script" uid="uid://o2w34tvv5xuw" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dpbooe5t1dpk3" path="res://icon.svg" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d3i43qyt3tka1" path="res://running.tscn" id="1_ig7tw"]
+
+[node name="main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_h2yge")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CharacterBody2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CharacterBody2D/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(60, 34)
+render_target_update_mode = 4
+
+[node name="Running" parent="CharacterBody2D/SubViewportContainer/SubViewport" instance=ExtResource("1_ig7tw")]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody2D/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89541, 1.91798)
+projection = 1
+size = 2.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CharacterBody2D/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.980311, 0.976866)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
