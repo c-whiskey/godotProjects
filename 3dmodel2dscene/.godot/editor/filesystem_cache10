@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1770412235
-Capture.PNG::CompressedTexture2D::9021701893105149331::1770412235::1770412239::1::::<><><>0<>0<>d57ca930dd3e8b07b995b8df52972d03<>res://.godot/imported/Capture.PNG-47574265afac29097782b53d7a5b27a4.ctex::
+::res://::1770503104
+Capture.PNG::CompressedTexture2D/CompressedTexture2D::9021701893105149331::1770412235::1770412239::1::::<><><>0<>0<>d57ca930dd3e8b07b995b8df52972d03<>res://.godot/imported/Capture.PNG-47574265afac29097782b53d7a5b27a4.ctex::
 icon.svg::CompressedTexture2D/CompressedTexture2D::8215034379752934212::1770407921::1770407927::1::::<><><>0<>0<>eb8c8ca26e9a033ff39d78797400b61f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene::7895753880854918378::1770412210::0::1::::<><><>0<>0<><>::uid://o2w34tvv5xuw::::res://player.gd<>uid://dpbooe5t1dpk3::::res://icon.svg<>uid://d3i43qyt3tka1::::res://running.tscn
-player.gd::GDScript::1039769339874118074::1770412034::0::1::::<>CharacterBody2D<><>0<>0<><>::
+main.tscn::PackedScene::7895753880854918378::1770457877::0::1::::<><><>0<>0<><>::uid://o2w34tvv5xuw::::res://player.gd<>uid://dpbooe5t1dpk3::::res://icon.svg<>uid://d3i43qyt3tka1::::res://running.tscn
+player.gd::GDScript/GDScript::1039769339874118074::1770412034::0::1::::<>CharacterBody2D<><>0<>0<><>::
 Running.fbx::PackedScene/PackedScene::2532942511632187927::1770367628::1770412209::1::::<><><>0<>0<>c881f6655e6707bcc72a469849be1e93<>res://.godot/imported/Running.fbx-ab3f7a7ab25759caeb9223a9f20b6834.scn::
-running.gdshader::Shader::5686904929665173820::1770412210::0::1::::<><><>0<>0<><>::
-running.tscn::PackedScene::9142876368346609786::1770412210::0::1::::<><><>0<>0<><>::uid://bcc8gththg3sd::::res://Running.fbx<>uid://c5xxrnfngxr0s::::res://runningAnimation.res<>uid://cna1q1jveh6se::::res://running.gdshader
-runningAnimation.res::AnimationLibrary::6927414905327737376::1770409195::0::1::::<><><>0<>0<><>::
+running.gdshader::Shader::5686904929665173820::1770457896::0::1::::<><><>0<>0<><>::
+running.tscn::PackedScene::9142876368346609786::1770457895::0::1::::<><><>0<>0<><>::uid://bcc8gththg3sd::::res://Running.fbx<>uid://c5xxrnfngxr0s::::res://runningAnimation.res<>uid://cna1q1jveh6se::::res://running.gdshader
+runningAnimation.res::AnimationLibrary/AnimationLibrary::6927414905327737376::1770409195::0::1::::<><><>0<>0<><>::

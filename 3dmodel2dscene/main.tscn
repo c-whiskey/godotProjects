@@ -40,3 +40,7 @@ size = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.980311, 0.976866)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1

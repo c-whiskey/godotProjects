@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://c75l07doe7d3l"]
+
+[ext_resource type="Script" uid="uid://bfpdje4ox4yjj" path="res://Player.gd" id="1_ig7tw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ig7tw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ig7tw"]
+size = Vector2(0.085, 0.045)
+subdivide_width = 4
+subdivide_depth = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(1, 0.188235, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.904306, 0.426884, 0, -0.426884, 0.904306, 0, 0.328573, 0.546233)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_ig7tw")
+
+[node name="Node3D" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0745512, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/Node3D"]
+size = Vector3(0.015, 0.02, 0.005)
+
+[node name="SoftBody3D" type="SoftBody3D" parent="CharacterBody3D/Node3D"]
+mesh = SubResource("QuadMesh_ig7tw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
+parent_collision_ignore = NodePath("../..")
+simulation_precision = 1
+total_mass = 10.01
+linear_stiffness = 1.0
+damping_coefficient = 0.07
+drag_coefficient = 0.09
+pinned_points = [13, 14, 12, 15, 10, 9]
+attachments/0/point_index = 13
+attachments/0/spatial_attachment_path = NodePath("..")
+attachments/0/offset = Vector3(0.00833333, 0.075, 0)
+attachments/1/point_index = 14
+attachments/1/spatial_attachment_path = NodePath("..")
+attachments/1/offset = Vector3(-0.00833333, 0.075, 0)
+attachments/2/point_index = 12
+attachments/2/spatial_attachment_path = NodePath("..")
+attachments/2/offset = Vector3(0.025, 0.075, 0)
+attachments/3/point_index = 15
+attachments/3/spatial_attachment_path = NodePath("..")
+attachments/3/offset = Vector3(-0.025, 0.075, 0)
+attachments/4/point_index = 10
+attachments/4/spatial_attachment_path = NodePath("..")
+attachments/4/offset = Vector3(-0.00833333, 0.025, 0)
+attachments/5/point_index = 9
+attachments/5/spatial_attachment_path = NodePath("..")
+attachments/5/offset = Vector3(0.00833333, 0.025, 0)

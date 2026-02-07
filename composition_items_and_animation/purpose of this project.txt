@@ -1,0 +1,24 @@
+I want to determine a method for adding additional animations to an existing character
+and animation library
+
+the reason I want to do this is I initially plan to make a vertical slice of the game
+that is very bare bones. But I want to be able to update it over time
+- adding things like
+	pick up and throw
+	golf swing
+	ninja jump
+	climb
+	slide
+	crawl
+	etc
+
+This will also tie into adding additional skills to the player as I develop the game as well
+
+so really, it's like figuring out a composition system
+for both animation and items.
+________
+
+The reason I want to do it this way is massively reduce the workload
+that I feel I 'have' to do, before even confirming if this is the direction
+I want to head in.
+
