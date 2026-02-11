@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Hover" load_steps=2 format=3 uid="uid://ey3bmbpbbb54"]
+
+[ext_resource type="Script" uid="uid://dvujxha1s5kmn" path="res://Abilities/scripts/hover.gd" id="1_870td"]
+
+[resource]
+script = ExtResource("1_870td")
+gravity_scale = 0.3
+metadata/_custom_type_script = "uid://dvujxha1s5kmn"

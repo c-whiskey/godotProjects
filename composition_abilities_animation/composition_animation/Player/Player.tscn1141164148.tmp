@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvboky6pqlyk0"]
+
+[ext_resource type="Script" uid="uid://ccp1n6qeb42s8" path="res://Player/Player.gd" id="1"]
+[ext_resource type="Script" uid="uid://dh5w1wievwifx" path="res://Player/Sprite.gd" id="2"]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Jump"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1.68179, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Land"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(0.241484, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.4, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lb64"]
+_data = {
+&"Jump": SubResource("3"),
+&"Land": SubResource("4")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 10
+collision_mask = 15
+floor_snap_length = 16.0
+script = ExtResource("1")
+speed = null
+jump_velocity = null
+gravity = null
+
+[node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("2")
+
+[node name="Sprite" type="Node2D" parent="."]
+position = Vector2(0, 8)
+script = ExtResource("2")
+player_path = NodePath("..")
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite"]
+position = Vector2(0, -8)
+color = Color(0.964706, 0.952941, 0.298039, 1)
+polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_1lb64")
+}

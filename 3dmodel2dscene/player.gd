@@ -4,7 +4,9 @@ extends CharacterBody2D
 @onready var player := $SubViewportContainer/SubViewport/Running
 
 func _ready() -> void:
-	playerAnim.play("runningAnimation/mixamo_com")
+	#playerAnim.play("runningAnimation/mixamo_com")
+	playerAnim.play("lib__lib__Thriller Part 3/mixamo_com")
+	#lib__lib__Thriller Part 3
 	pass
 
 var speed = 3

@@ -1,8 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkq06bianyrxi"]
+[gd_scene load_steps=6 format=3 uid="uid://dkq06bianyrxi"]
 
 [ext_resource type="Script" uid="uid://o2w34tvv5xuw" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://dpbooe5t1dpk3" path="res://icon.svg" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://d3i43qyt3tka1" path="res://running.tscn" id="1_ig7tw"]
+[ext_resource type="Shader" uid="uid://bfnvxcujy50uf" path="res://main.gdshader" id="3_1bvp3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
+shader = ExtResource("3_1bvp3")
+shader_parameter/Angle_deg = 30.0
+shader_parameter/Brightness = 2.5
+shader_parameter/Band_Soft = 0.06
+shader_parameter/Stage_Count = 2
+shader_parameter/Stage1_Duration = 1.0
+shader_parameter/Stage2_Duration = 1.5
+shader_parameter/Stage3_Duration = 1.0
+shader_parameter/Stage1_Width = 0.12
+shader_parameter/Stage2_Width = 0.12
+shader_parameter/Stage3_Width = 0.12
+shader_parameter/Stage1_LeftToRight = true
+shader_parameter/Stage2_LeftToRight = false
+shader_parameter/Stage3_LeftToRight = true
+shader_parameter/One_Shot = false
+shader_parameter/OneShot_Delay = 0.0
+shader_parameter/Phase_Offset = 0.0
+shader_parameter/Wiggle_Angle = false
+shader_parameter/Wiggle_Amount_deg = 15.0
 
 [node name="main" type="Node2D"]
 
@@ -17,6 +39,7 @@ script = ExtResource("1_0xm2m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CharacterBody2D"]
+material = SubResource("ShaderMaterial_lquwl")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -40,6 +63,9 @@ size = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.980311, 0.976866)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 drag_left_margin = 0.1
 drag_top_margin = 0.1
 drag_right_margin = 0.1

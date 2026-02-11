@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cupouo26m1vs2"]
+
+[ext_resource type="PackedScene" uid="uid://cvboky6pqlyk0" path="res://Player/Player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://blks5vkgb3na1" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://h7iufcc6p005" path="res://Player/white_platform.tscn" id="2_h2yge"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_h2yge")
+
+[node name="Player" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(366, 197)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(368, 342)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(535, 226)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(111, 403)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(9, 88)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(320, 568)
+scale = Vector2(21.2404, 0.898668)
