@@ -1,16 +1,17 @@
 @tool
 extends EditorPlugin
 
-#const ANIM_SAVE_DIR := "res://animations/"
-
 const INPUT_DIR := "res://mixamo_input"
 const OUTPUT_DIR := "res://animation_output"
 
 func _enter_tree() -> void:
-	#add_tool_menu_item("Convert Mixamo Animations", _convert_selected)
 	add_tool_menu_item("Convert Mixamo Animations", add_bones_to_import_files)
 	DirAccess.make_dir_recursive_absolute(OUTPUT_DIR)
 
+#add_bones_to_import_files()
+# |- modify_import_file()
+# |- reimport_file()
+# |- extract_anims_and_save()
 
 func add_bones_to_import_files() -> void:
 	var dir := DirAccess.open(INPUT_DIR)
@@ -20,14 +21,15 @@ func add_bones_to_import_files() -> void:
 		if not dir.current_is_dir() and file_name.ends_with(".fbx"):
 			modify_import_file(INPUT_DIR + "/" + file_name + ".import")
 			reimport_file(INPUT_DIR + "/" + file_name)
-			extract_anims(INPUT_DIR + "/" + file_name)
-			print("ss")
+			extract_anims_and_save(INPUT_DIR + "/" + file_name)
+
 		file_name = dir.get_next()
+	print("Conversion finished")
 
 func reimport_file(path):
 	var fs := get_editor_interface().get_resource_filesystem()
 	fs.reimport_files(PackedStringArray([path]))
-	print("GOT TO HERE")
+	prints("Reimported:", path)
 
 
 func modify_import_file(data_string):
@@ -52,12 +54,7 @@ func modify_import_file(data_string):
 	else:
 		print("Error opening file for writing.")
 
-
-
-func _exit_tree() -> void:
-	remove_tool_menu_item("Convert Mixamo Animations")
-
-func extract_anims(model_path: String):
+func extract_anims_and_save(model_path: String):
 	# Load imported scene
 	var packed_scene := load(model_path) as PackedScene
 	if not packed_scene:
@@ -72,32 +69,25 @@ func extract_anims(model_path: String):
 		push_error("No AnimationPlayer found in " + model_path)
 		return
 	anim_player.get_animation_library("")
+	# remove take_001
 	for lib in anim_player.get_animation_library_list():
 		var anim := anim_player.get_animation_library(lib)
 		if anim == null:
 			continue
-	# Make unique
-		var unique_anim := anim.duplicate(true)
-		var save_path := OUTPUT_DIR + "/lib_" + "%s_%s.res" % [
-			"_lib_",
-			model_path.get_file().get_basename()
-		]
-		ResourceSaver.save(unique_anim, save_path)
-	
-	for anim_name in anim_player.get_animation_list():
-		var anim := anim_player.get_animation(anim_name)
-		if anim == null:
-			continue
+		if anim.has_animation("Take 001"):
+			anim.remove_animation("Take 001")
 	# Make unique
 		var unique_anim := anim.duplicate(true)
 		var save_path := OUTPUT_DIR + "/" + "%s_%s.res" % [
-			model_path.get_file().get_basename(),
-			anim_name
+			"anim_",
+			model_path.get_file().get_basename()
 		]
 		ResourceSaver.save(unique_anim, save_path)
 
+func _exit_tree() -> void:
+	remove_tool_menu_item("Convert Mixamo Animations")
 
-
+#### Don't use anything below ####
 func _convert_selected() -> void:
 	var editor := get_editor_interface()
 	var selection := editor.get_selection()
@@ -115,7 +105,6 @@ func _convert_selected() -> void:
 		if not dir.current_is_dir() and file_name.ends_with(".fbx"):
 			_process_model(INPUT_DIR + "/" + file_name)
 		file_name = dir.get_next()
-
 
 func _process_model(model_path: String) -> void:
 	# Load imported scene

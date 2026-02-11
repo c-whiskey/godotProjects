@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://p467yit6c3et"]
-
-[ext_resource type="Script" uid="uid://dxjsllrbypktb" path="res://converter.gd" id="1_7strt"]
-
-[node name="converter" type="Node"]
-script = ExtResource("1_7strt")
