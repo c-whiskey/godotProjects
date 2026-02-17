@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://616f2l1ah67u"]
+
+[ext_resource type="Script" uid="uid://dt5d5r2dm47dh" path="res://CharMover.gd" id="1_glv2v"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("1_glv2v")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D"]
