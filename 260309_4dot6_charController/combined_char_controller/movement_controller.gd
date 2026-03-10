@@ -37,6 +37,11 @@ func _physics_process(delta: float) -> void:
 		# honestly it shouldn't matter, 
 		#because your state based movement should cover things appropriately.
 
+	var overrideMovement = $Overrides.get_children()
+	for movement in overrideMovement:
+		if movement.has_method("physics_update"):
+			movement.physics_update(delta)
+
 	var components = get_children()
 	for comp in components:
 		if comp.has_method("check_input"):

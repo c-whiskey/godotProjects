@@ -9,30 +9,21 @@ extends Node
 func physics_update(delta : float):
 	var input_LR = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	update_facing(input_LR, delta) # I love this. but I suspect it may cause issues.
+	# TODO, move into move controller?
 
 	if input_LR != 0 && player.is_on_floor(): # and we are on ground...
 		moveController.request_action_change(moveController.playerAction.MOVING)
-	else:
-		pass#moveController.request_action_change(moveController.playerAction.IDLE)
 
-	if moveController.currentAction != moveController.playerAction.MOVING: # early return?
+	if moveController.currentAction != moveController.playerAction.MOVING:
+		player.velocity.x = lerp(player.velocity.x, 0.0, 0.15)
+		# unsure if I want this here..
 		return
 
 	if moveController.animationPlayer.current_animation != "universialAnimations/Jog_Fwd":
 		moveController.animationPlayer.play("universialAnimations/Jog_Fwd",0.2)
 
-	if player.is_on_floor():
+	if player.is_on_floor(): #unsure this if is necessary.
 		player.velocity.x = input_LR * move_speed
-	else: # air control ... # move this to gravity.. TODO
-		player.velocity.x = lerp(
-			player.velocity.x,
-			input_LR * move_speed,
-			air_control )
-	# submerged in water??
-		pass
-	return
-
-
 
 @export var left_angle := -90.0
 @export var right_angle := 90.0

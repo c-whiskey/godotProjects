@@ -1,4 +1,5 @@
 Node
+AnimationPlayer
 RichTextLabel
 WorldEnvironment
 Camera3D

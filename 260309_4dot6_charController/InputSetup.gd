@@ -25,7 +25,8 @@ func setup_input_map():
 	add_action_key("tab", KEY_TAB)
 	
 	add_action_key("kick", KEY_F)
-
+	add_action_key("spell_slot", KEY_E)
+	
 func setup_controller_input_map():
 	# Movement (Left Stick)
 	add_action_controller_axis("move_left", JOY_AXIS_LEFT_X, -1.0)

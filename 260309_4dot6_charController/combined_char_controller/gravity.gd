@@ -8,7 +8,7 @@ extends Node
 @export var fall_multiplier: float = 1.5
 
 func physics_update(delta : float):
-	if player.is_on_floor(): # or the player is submerged #or player is jumping...
+	if player.is_on_floor(): # or the player is submerged #or player is jumping... have a state for it...
 		return
 
 	if player.velocity.y > 0:
