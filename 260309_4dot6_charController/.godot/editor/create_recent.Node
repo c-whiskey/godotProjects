@@ -1,0 +1,13 @@
+Node
+RichTextLabel
+WorldEnvironment
+Camera3D
+SubViewportContainer
+SubViewport
+CollisionShape2D
+CharacterBody2D
+Node2D
+StaticBody2D
+Area2D
+Polygon2D
+Camera2D

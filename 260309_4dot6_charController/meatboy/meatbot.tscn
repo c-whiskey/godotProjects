@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://yw8qm2kn4bvr"]
+
+[ext_resource type="PackedScene" uid="uid://d3i43qyt3tka1" path="res://3d/running.tscn" id="1_44mt1"]
+[ext_resource type="Script" uid="uid://boho1uu81i6tu" path="res://meatboy/meatbot.gd" id="1_p5v0v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5v0v"]
+radius = 3.0
+height = 20.0
+
+[sub_resource type="Curve" id="Curve_p5v0v"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8125, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_p5v0v"]
+offsets = PackedFloat32Array(0, 0.546763, 0.640288, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.933333, 0.329412, 1, 1, 0.990476, 0.904202, 0.142857, 1, 1, 1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5v0v"]
+size = Vector2(8, 27)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=20485137]
+script = ExtResource("1_p5v0v")
+kick_time = 0.75
+kick_forward_force = 1.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1058552563]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.435
+offset_top = -10.51
+offset_right = 70.565
+offset_bottom = 35.49
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=964194466]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(94, 46)
+render_target_update_mode = 4
+
+[node name="Armature" parent="SubViewportContainer/SubViewport" unique_id=1349606314 instance=ExtResource("1_44mt1")]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2015117774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8452, 2.72926)
+projection = 1
+size = 2.282
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1341358487]
+shape = SubResource("CapsuleShape2D_p5v0v")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1010563168]
+visible = false
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 18.4
+initial_velocity_max = 18.4
+scale_amount_curve = SubResource("Curve_p5v0v")
+color_ramp = SubResource("Gradient_p5v0v")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2021589609]
+position = Vector2(8, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1435551573]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_p5v0v")

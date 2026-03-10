@@ -1,0 +1,61 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1773137877
+icon.svg::CompressedTexture2D::1790880795757653::1773040659::1773040668::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+InputSetup.gd::GDScript::281536695393060276::1773137239::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene::2615120900256951109::1773137877::0::1::::<><><>0<>0<><>::uid://c33dlcqugi4ov::::res://0903_charCont_states/character_body_2d.tscn<>uid://b6swochgjvvd0::::res://combined_char_controller/combined_char.tscn
+running.gdshader::Shader::306047797021221517::1770804762::0::1::::<><><>0<>0<><>::
+::res://3d/::1773131515
+Running.fbx::PackedScene::2532942511632187927::1770367628::1773043423::1::::<><><>0<>0<>149f8692bb568551f938eb69696de08f<>res://.godot/imported/Running.fbx-3020a94fd28540442a6212e83e485372.scn::
+running.tscn::PackedScene::9142876368346609786::1773131515::0::1::::<><><>0<>0<><>::uid://bcc8gththg3sd::::res://3d/Running.fbx<>uid://c5xxrnfngxr0s::::res://3d/runningAnimation.res<>uid://emiteiu0cqbl::::res://running.gdshader<>uid://domi4h205uhno::::res://testAnims/lib__lib__Thriller Part 3.res<>uid://cr73ubr5goi0e::::res://testAnims/UAL1_animations.res<>uid://byx3wgigiwl3a::::res://meatboy/anims/anim__Breakdance 1990.res<>uid://cexuhcgkbenbe::::res://meatboy/anims/anim__Breakdance 1990 (1).res<>uid://cyarrprebqbt0::::res://meatboy/anims/anim__Climbing Ladder.res<>uid://cr2uwu6xgfx7c::::res://meatboy/anims/anim__Flying.res<>uid://cnlur770qk3qk::::res://meatboy/anims/anim__Flying (1).res<>uid://6axm4bc0ai2r::::res://meatboy/anims/anim__Hanging Idle.res<>uid://ct31i6qjut46a::::res://meatboy/anims/anim__Hanging Idle (1).res<>uid://bcvro5uem4ip5::::res://meatboy/anims/anim__Jump From Wall.res<>uid://dwsirwr0uo6vn::::res://meatboy/anims/anim__Jump From Wall (1).res<>uid://e3mgdqir3yi5::::res://meatboy/anims/anim__Kicking.res<>uid://dby7kn3w1pnj3::::res://meatboy/anims/anim__Kicking_bonemap.res<>uid://c8508i3lq5cod::::res://meatboy/anims/anim__Kicking_bonemapAndHumanoid.res<>uid://btwnm3vg162dr::::res://meatboy/anims/anim__Mma Kick.res<>uid://iwpnd3k5l1tk::::res://meatboy/anims/anim__Moving While Hanging.res<>uid://bydcxe6a8n0nh::::res://meatboy/anims/anim__Praying.res<>uid://mblq0lxox4mu::::res://meatboy/anims/anim__PrayingXX.res<>uid://cbi7hkmkadqwe::::res://meatboy/anims/anim__Quick Roll To Run.res<>uid://d0as5r2mcvce4::::res://meatboy/anims/anim__Standing Melee Kick.res<>uid://3did6aqh8wp7::::res://meatboy/anims/anim__Standing Melee Kick (1).res<>uid://d2adv4ff8v6dh::::res://meatboy/anims/anim__Thriller Part 3.res
+runningAnimation.res::AnimationLibrary::6927414905327737376::1770757480::0::1::::<><><>0<>0<><>::
+::res://0903_charCont_states/::1773137650
+character_body_2d.gd::GDScript::1280749012329502627::1773034629::0::1::::<>CharacterBody2D<><>0<>0<><>::
+character_body_2d.tscn::PackedScene::6796133491756681733::1773139113::0::1::::<><><>0<>0<><>::uid://sin0p8fcfjn4::::res://0903_charCont_states/character_body_2d.gd<>uid://b4bcl1216pvp0::::res://0903_charCont_states/movement_controller.gd<>uid://doowab3vnpc24::::res://0903_charCont_states/states/idle_state.gd<>uid://dq1apo5ca2wv5::::res://0903_charCont_states/states/run_state.gd<>uid://60vp6i3ytpmb::::res://0903_charCont_states/states/gravity_state.gd<>uid://kow1oto1tv24::::res://0903_charCont_states/states/jump_state.gd<>uid://ccbg2wgv4j1yy::::res://0903_charCont_states/states/wall_jump_state.gd<>uid://0xwi1fca5b08::::res://0903_charCont_states/states/roll.gd<>uid://8naxrqfryog::::res://0903_charCont_states/states/attack_test.gd
+movement_controller.gd::GDScript::4424104013208771539::1773139106::0::1::::MovementControllerDupe<>Node<><>0<>0<><>::
+::res://0903_charCont_states/states/::1773043390
+attack_test.gd::GDScript::68915021823009882::1773032889::0::1::::<>Node<><>0<>0<><>::
+gravity_state.gd::GDScript::2228767082274485741::1773022954::0::1::::<>Node<><>0<>0<><>::
+idle_state.gd::GDScript::8172143021159438499::1773019751::0::1::::<>Node<><>0<>0<><>::
+jump_state.gd::GDScript::732172694769348799::1773023017::0::1::::<>Node<><>0<>0<><>::
+roll.gd::GDScript::1803553212909463655::1773022968::0::1::::<>Node<><>0<>0<><>::
+run_state.gd::GDScript::8335984939564941656::1773024573::0::1::::<>Node<><>0<>0<><>::
+wall_jump_state.gd::GDScript::4915697116584169576::1773023002::0::1::::<>Node<><>0<>0<><>::
+::res://combined_char_controller/::1773138951
+combined_char.tscn::PackedScene::4600794527146532235::1773139070::0::1::::<><><>0<>0<><>::uid://pugsj1jkdrbc::::res://combined_char_controller/runningScene/runningInherited.tscn<>uid://1r4iqj6aac54::::res://combined_char_controller/movement_controller.gd<>uid://b554pbkial2p4::::res://combined_char_controller/idle.gd<>uid://nr6cxasniinq::::res://combined_char_controller/run.gd
+movement_controller.gd::GDScript::1861780291234668353::1773137612::0::1::::MovementControllerASS<>Node<><>0<>0<><>::
+idle.gd::GDScript::4555804973490008543::1773139070::0::1::::<>Node<><>0<>0<><>::
+run.gd::GDScript::949436396349594810::1773139070::0::1::::<>Node<><>0<>0<><>::
+::res://combined_char_controller/runningScene/::1773138470
+runningInherited.tscn::PackedScene::1094517169196054080::1773138470::0::1::::<><><>0<>0<><>::uid://3701g37sdhe6::::res://combined_char_controller/runningScene/running_inherited.gd<>uid://dumgwmn1y84le::::res://combined_char_controller/runningScene/universialAnimations.res<>uid://cpyc5pms1xfl6::::res://combined_char_controller/runningScene/universialAnimations_2.res
+running_inherited.gd::GDScript::2032912425328246779::1773131173::0::1::::<>Node3D<><>0<>0<><>::
+test.tscn::PackedScene::3205868414149565310::1773051972::0::1::::<><><>0<>0<><>::
+universialAnimations.res::AnimationLibrary::8588215697888557814::1773052752::0::1::::<><><>0<>0<><>::
+universialAnimations_2.res::AnimationLibrary::5875394903098200001::1773105981::0::1::::<><><>0<>0<><>::
+::res://meatboy/::1773043653
+meatbot.gd::GDScript::3384412690341786518::1772264604::0::1::::<>CharacterBody2D<><>0<>0<><>::
+meatbot.tscn::PackedScene::1731981463828653207::1773043653::0::1::::<><><>0<>0<><>::uid://d3i43qyt3tka1::::res://3d/running.tscn<>uid://boho1uu81i6tu::::res://meatboy/meatbot.gd
+::res://meatboy/anims/::1773043369
+anim__Breakdance 1990 (1).res::AnimationLibrary::5102304385465759690::1771792882::0::1::::<><><>0<>0<><>::
+anim__Breakdance 1990.res::AnimationLibrary::4120173310395339604::1771792882::0::1::::<><><>0<>0<><>::
+anim__Climbing Ladder.res::AnimationLibrary::6458436976368028403::1771792883::0::1::::<><><>0<>0<><>::
+anim__Flying (1).res::AnimationLibrary::5709250919665632010::1771792884::0::1::::<><><>0<>0<><>::
+anim__Flying.res::AnimationLibrary::6023044635322800326::1771792884::0::1::::<><><>0<>0<><>::
+anim__Hanging Idle (1).res::AnimationLibrary::6165826555162810378::1771792885::0::1::::<><><>0<>0<><>::
+anim__Hanging Idle.res::AnimationLibrary::2177273597985739351::1771792885::0::1::::<><><>0<>0<><>::
+anim__Jump From Wall (1).res::AnimationLibrary::8741092688066183907::1771792886::0::1::::<><><>0<>0<><>::
+anim__Jump From Wall.res::AnimationLibrary::2571209100591639524::1771792887::0::1::::<><><>0<>0<><>::
+anim__Kicking.res::AnimationLibrary::339297453016680958::1772261902::0::1::::<><><>0<>0<><>::
+anim__Kicking_bonemap.res::AnimationLibrary::7280957489615350490::1771792888::0::1::::<><><>0<>0<><>::
+anim__Kicking_bonemapAndHumanoid.res::AnimationLibrary::7152581860044764983::1771792889::0::1::::<><><>0<>0<><>::
+anim__Mma Kick.res::AnimationLibrary::3766237277241158011::1771792889::0::1::::<><><>0<>0<><>::
+anim__Moving While Hanging.res::AnimationLibrary::607861231225316208::1771792890::0::1::::<><><>0<>0<><>::
+anim__Praying.res::AnimationLibrary::4077308829540379997::1771792891::0::1::::<><><>0<>0<><>::
+anim__PrayingXX.res::AnimationLibrary::845028292174621400::1770797328::0::1::::<><><>0<>0<><>::
+anim__Quick Roll To Run.res::AnimationLibrary::4861501221608219656::1771792891::0::1::::<><><>0<>0<><>::
+anim__Standing Melee Kick (1).res::AnimationLibrary::1971973477412431086::1772262654::0::1::::<><><>0<>0<><>::
+anim__Standing Melee Kick.res::AnimationLibrary::8915130556872453301::1771792892::0::1::::<><><>0<>0<><>::
+anim__Thriller Part 3.res::AnimationLibrary::9054582013129793537::1771792893::0::1::::<><><>0<>0<><>::
+::res://testAnims/::1773043451
+lib__lib__Thriller Part 3.res::AnimationLibrary::8167216329575788100::1770891102::0::1::::<><><>0<>0<><>::
+UAL1_animations.res::AnimationLibrary::6033847669194890694::1770925555::0::1::::<><><>0<>0<><>::
+UAL2_animations.res::AnimationLibrary::228891271342181437::1770923742::0::1::::<><><>0<>0<><>::
