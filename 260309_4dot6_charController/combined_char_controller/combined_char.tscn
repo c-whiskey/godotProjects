@@ -91,3 +91,5 @@ offset_right = 74.0
 offset_bottom = 5.0
 text = "test"
 horizontal_alignment = 1
+
+[connection signal="animation_event" from="SubViewportContainer/SubViewport/Running" to="MovementController" method="_on_animation_player_event"]

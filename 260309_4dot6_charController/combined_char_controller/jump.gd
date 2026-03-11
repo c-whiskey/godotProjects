@@ -7,26 +7,42 @@ extends Node
 @export var jump_cut_multiplier: float = 0.5
 
 @export var coyote_time: float = 0.12
-var timer: float = 0.0
+var coyote_timer: float = 0.0
 
-var can_ground_jump = false
+@export var jump_buffer_time: float = 0.12
+var jump_buffer_timer: float = 0.0
+
 func physics_update(delta : float):
-	# if has "JumpAbility" in $overrides: return
-	var is_on_floor = player.is_on_floor()
-	
-	if (Input.is_action_just_pressed("jump") ):# && can_ground_jump:
+	update_coyote_timer(delta)
+	update_buffer_timer(delta)
+
+	if jump_buffer_timer > 0 and coyote_timer > 0:
 		player.velocity.y = -jump_force
 		moveController.currentAction = moveController.playerAction.JUMP_ABILITY
+		
+		# consume timers so jump can't trigger again
+		jump_buffer_timer = 0
+		coyote_timer = 0
 
 		if moveController.animationPlayer.current_animation != "universialAnimations_2/NinjaJump_Idle":
-			moveController.animationPlayer.play("universialAnimations_2/NinjaJump_Idle",0.05)
+			moveController.animationPlayer.play("universialAnimations_2/NinjaJump_Idle", 0.05)
 
+	# --- Jump cut (variable height) ---
 	if Input.is_action_just_released("jump") and player.velocity.y < 0:
 		player.velocity.y *= jump_cut_multiplier
 
-#TODO. Jump Bufer, coyote time, limit to 1 jump, reset on hitting ground.
-#TODO. AIR buffer.. I think maybe keep it in run, rename it to movement
-# and enable air buffer on jump and fall
+func update_coyote_timer(delta : float):
+	if player.is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer -= delta
+
+func update_buffer_timer(delta : float):
+	if Input.is_action_just_pressed("jump"):
+		jump_buffer_timer = jump_buffer_time
+	else:
+		jump_buffer_timer -= delta
+
 
 # Consider override actions too?
 # eg, jump override. 

@@ -25,6 +25,11 @@ func physics_update(delta : float):
 	if player.is_on_floor(): #unsure this if is necessary.
 		player.velocity.x = input_LR * move_speed
 
+
+
+
+
+
 @export var left_angle := -90.0
 @export var right_angle := 90.0
 @export var rotate_speed := 12.0

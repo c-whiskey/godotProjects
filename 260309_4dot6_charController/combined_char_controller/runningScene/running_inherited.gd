@@ -1,8 +1,15 @@
 extends Node3D
 
+signal animation_event(event_name)
+
 func animationCall():
 	$AnimationPlayer.play("universialAnimations/Jump",0.2)
 	pass
+
+func emit_anim_event(event_name : String):
+	animation_event.emit(event_name)
+
+# lock, disable_interrupt, hitbox_on/off, unlock
 
 var anims = [
 "universialAnimations/Jump",

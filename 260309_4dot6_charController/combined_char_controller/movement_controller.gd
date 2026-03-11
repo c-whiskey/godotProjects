@@ -21,6 +21,7 @@ var currentState := playerState.ON_GROUND
 
 var action_locked = false
 var state_locked = false
+var can_interrupt_action = false
 
 func reset_action():
 	currentAction = playerAction.IDLE
@@ -77,3 +78,24 @@ func request_action_change(action : playerAction):
 		return false
 	currentAction = action
 	return true
+
+func request_action_interrupt(action : playerAction):
+	if action_locked:
+		return false
+	currentAction = action
+	return true
+
+func _on_animation_player_event(event_name: Variant) -> void:
+	print(event_name)
+	if event_name == "LOCK":
+		lock_action()
+		pass
+	if event_name == "UNLOCK":
+		unlock_action()
+		pass
+	
+	if event_name == "DISABLE_INTERRUPT":
+		can_interrupt_action = false
+	if event_name == "ENABLE_INTERRUPT":
+		can_interrupt_action = true
+	
