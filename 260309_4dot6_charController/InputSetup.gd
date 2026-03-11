@@ -21,7 +21,10 @@ func setup_input_map():
 
 	add_action_key("jump", KEY_SPACE)
 	add_action_key("sprint", KEY_SHIFT)
+	
 	add_action_key("dash", KEY_SHIFT)
+	add_action_key("roll", KEY_SHIFT)
+	
 	add_action_key("tab", KEY_TAB)
 	
 	add_action_key("kick", KEY_F)

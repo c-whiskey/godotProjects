@@ -17,9 +17,11 @@ func physics_update(delta : float):
 	update_buffer_timer(delta)
 
 	if jump_buffer_timer > 0 and coyote_timer > 0:
+		moveController.request_action_change(moveController.playerAction.JUMP_ABILITY)
+		if moveController.currentAction != moveController.playerAction.JUMP_ABILITY:
+			return
+			
 		player.velocity.y = -jump_force
-		moveController.currentAction = moveController.playerAction.JUMP_ABILITY
-		
 		# consume timers so jump can't trigger again
 		jump_buffer_timer = 0
 		coyote_timer = 0

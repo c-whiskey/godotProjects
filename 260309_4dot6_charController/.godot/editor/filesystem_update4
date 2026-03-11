@@ -5,3 +5,5 @@ res://combined_char_controller/runningScene/universialAnimations_2.res
 res://combined_char_controller/movement_controller.gd
 res://combined_char_controller/spell_slot.gd
 res://InputSetup.gd
+res://combined_char_controller/movement_ability.gd
+res://combined_char_controller/jump.gd

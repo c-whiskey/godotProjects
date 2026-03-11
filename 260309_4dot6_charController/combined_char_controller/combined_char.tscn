@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://nh8fiju6r3qc" path="res://combined_char_controller/air_control.gd" id="7_6uh8b"]
 [ext_resource type="Script" uid="uid://c7lram7x1bnbm" path="res://combined_char_controller/ground_friction.gd" id="8_i838p"]
 [ext_resource type="Script" uid="uid://cy4v3cja10gex" path="res://combined_char_controller/spell_slot.gd" id="8_iosbt"]
+[ext_resource type="Script" uid="uid://dgr81temt7cdr" path="res://combined_char_controller/movement_ability.gd" id="10_vfqoe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upxo3"]
 size = Vector2(14, 32)
@@ -81,7 +82,12 @@ script = ExtResource("8_iosbt")
 player = NodePath("../../..")
 moveController = NodePath("../..")
 
-[node name="ActiveSpell" type="Node" parent="MovementController/Overrides/SpellSlot" unique_id=1821381336]
+[node name="MovementAbility" type="Node" parent="MovementController/Overrides" unique_id=1090907538 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("10_vfqoe")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+roll_speed = 400.0
+roll_time = 1.33
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=472264370]
 texture_filter = 1
