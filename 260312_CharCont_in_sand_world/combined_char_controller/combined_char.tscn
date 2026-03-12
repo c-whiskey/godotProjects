@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://b6swochgjvvd0"]
+
+[ext_resource type="PackedScene" uid="uid://pugsj1jkdrbc" path="res://combined_char_controller/runningScene/runningInherited.tscn" id="1_xttcd"]
+[ext_resource type="Script" uid="uid://1r4iqj6aac54" path="res://combined_char_controller/movement_controller.gd" id="2_1ct3q"]
+[ext_resource type="Script" uid="uid://b554pbkial2p4" path="res://combined_char_controller/idle.gd" id="3_26yrp"]
+[ext_resource type="Script" uid="uid://nr6cxasniinq" path="res://combined_char_controller/run.gd" id="3_hit4c"]
+[ext_resource type="Script" uid="uid://c73wc7wetxyca" path="res://combined_char_controller/gravity.gd" id="4_kxmm4"]
+[ext_resource type="Script" uid="uid://bj605v1vvifsw" path="res://combined_char_controller/jump.gd" id="6_rt75m"]
+[ext_resource type="Script" uid="uid://nh8fiju6r3qc" path="res://combined_char_controller/air_control.gd" id="7_6uh8b"]
+[ext_resource type="Script" uid="uid://c7lram7x1bnbm" path="res://combined_char_controller/ground_friction.gd" id="8_i838p"]
+[ext_resource type="Script" uid="uid://cy4v3cja10gex" path="res://combined_char_controller/spell_slot.gd" id="8_iosbt"]
+[ext_resource type="Script" uid="uid://dgr81temt7cdr" path="res://combined_char_controller/movement_ability.gd" id="10_vfqoe"]
+[ext_resource type="Script" uid="uid://chcob0x15a4o6" path="res://combined_char_controller/light_attack.gd" id="11_c43am"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vfqoe"]
+radius = 6.0
+height = 32.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1656390516]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=354620093]
+shape = SubResource("CapsuleShape2D_vfqoe")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=44430679]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1578641]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size_2d_override = Vector2i(17, 29)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1374928081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+projection = 1
+size = 32.0
+
+[node name="Running" parent="SubViewportContainer/SubViewport" unique_id=2039606552 instance=ExtResource("1_xttcd")]
+
+[node name="MovementController" type="Node" parent="." unique_id=390515997]
+script = ExtResource("2_1ct3q")
+
+[node name="Defaults" type="Node" parent="MovementController" unique_id=1895219048]
+
+[node name="Idle" type="Node" parent="MovementController/Defaults" unique_id=956785663 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("3_26yrp")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="GroundFriction" type="Node" parent="MovementController/Defaults" unique_id=1619077223 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("8_i838p")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="Gravity" type="Node" parent="MovementController/Defaults" unique_id=94784594 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("4_kxmm4")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="Run" type="Node" parent="MovementController/Defaults" unique_id=1073304756 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("3_hit4c")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="Jump" type="Node" parent="MovementController/Defaults" unique_id=498240367 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("6_rt75m")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="AirControl" type="Node" parent="MovementController/Defaults" unique_id=1115528888 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("7_6uh8b")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="Overrides" type="Node" parent="MovementController" unique_id=1867594057]
+
+[node name="SpellSlot" type="Node" parent="MovementController/Overrides" unique_id=1790093812 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("8_iosbt")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="MovementAbility" type="Node" parent="MovementController/Overrides" unique_id=1090907538 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("10_vfqoe")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+roll_speed = 400.0
+roll_time = 1.33
+
+[node name="LightAttack" type="Node" parent="MovementController/Overrides" unique_id=1881499347 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("11_c43am")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=472264370]
+texture_filter = 1
+offset_left = -74.0
+offset_top = -35.0
+offset_right = 74.0
+offset_bottom = 5.0
+text = "test"
+horizontal_alignment = 1
+
+[connection signal="animation_event" from="SubViewportContainer/SubViewport/Running" to="MovementController" method="_on_animation_player_event"]
+[connection signal="animation_finished" from="SubViewportContainer/SubViewport/Running" to="MovementController" method="_on_animation_player_animation_finished"]

@@ -1,0 +1,6 @@
+res://main.tscn
+res://CharScene/common_reference.gd
+res://CharScene/main.gd
+res://CharScene/character.tscn
+res://CharScene/canvas/canvas.gd
+res://CharScene/character/character.gd

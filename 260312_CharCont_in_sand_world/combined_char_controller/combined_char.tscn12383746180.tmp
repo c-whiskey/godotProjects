@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b6swochgjvvd0"]
+
+[ext_resource type="PackedScene" uid="uid://pugsj1jkdrbc" path="res://combined_char_controller/runningScene/runningInherited.tscn" id="1_xttcd"]
+[ext_resource type="Script" uid="uid://1r4iqj6aac54" path="res://combined_char_controller/movement_controller.gd" id="2_1ct3q"]
+[ext_resource type="Script" uid="uid://b554pbkial2p4" path="res://combined_char_controller/idle.gd" id="3_26yrp"]
+[ext_resource type="Script" uid="uid://nr6cxasniinq" path="res://combined_char_controller/run.gd" id="3_hit4c"]
+[ext_resource type="Script" uid="uid://c73wc7wetxyca" path="res://combined_char_controller/gravity.gd" id="4_kxmm4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_upxo3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upxo3"]
+size = Vector2(14, 32)
+
+[node name="Player" type="CharacterBody2D" unique_id=1656390516]
+
+[node name="placeholder" type="Sprite2D" parent="." unique_id=1006783434]
+visible = false
+position = Vector2(0, 8)
+texture = SubResource("CanvasTexture_upxo3")
+
+[node name="Polygon2D" type="Polygon2D" parent="placeholder" unique_id=1755926741]
+position = Vector2(0, -8)
+color = Color(0.87577426, 0.4727322, 0.5787555, 1)
+polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+
+[node name="Polygon2D2" type="Polygon2D" parent="placeholder" unique_id=258684406]
+polygon = PackedVector2Array(3, -19, 3, -14, 11, -14, 11, -21, 3, -21, 3, -20, 3, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=354620093]
+shape = SubResource("RectangleShape2D_upxo3")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=44430679]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1578641]
+transparent_bg = true
+handle_input_locally = false
+size_2d_override = Vector2i(17, 29)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1374928081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+projection = 1
+size = 32.0
+
+[node name="Running" parent="SubViewportContainer/SubViewport" unique_id=2039606552 instance=ExtResource("1_xttcd")]
+
+[node name="MovementController" type="Node" parent="." unique_id=390515997]
+script = ExtResource("2_1ct3q")
+
+[node name="Defaults" type="Node" parent="MovementController" unique_id=1895219048]
+
+[node name="Idle" type="Node" parent="MovementController/Defaults" unique_id=956785663 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("3_26yrp")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="Gravity" type="Node" parent="MovementController/Defaults" unique_id=94784594 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("4_kxmm4")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="Run" type="Node" parent="MovementController/Defaults" unique_id=1073304756 node_paths=PackedStringArray("player", "moveController")]
+script = ExtResource("3_hit4c")
+player = NodePath("../../..")
+moveController = NodePath("../..")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=472264370]
+texture_filter = 1
+offset_left = -74.0
+offset_top = -35.0
+offset_right = 74.0
+offset_bottom = 5.0
+text = "test"
+horizontal_alignment = 1
