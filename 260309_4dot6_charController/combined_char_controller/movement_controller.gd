@@ -99,3 +99,8 @@ func _on_animation_player_event(event_name: Variant) -> void:
 	if event_name == "ENABLE_INTERRUPT":
 		can_interrupt_action = true
 	
+
+func _on_animation_player_animation_finished(animation_name: Variant) -> void:
+	print("UNLOCKING ANIM")
+	unlock_action()
+	pass # Replace with function body.

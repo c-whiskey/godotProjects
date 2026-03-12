@@ -1,4 +1,9 @@
+CSGSphere3D
 Node
+Node2D
+CSGBox3D
+CSGCylinder3D
+BoneAttachment3D
 AnimationPlayer
 RichTextLabel
 WorldEnvironment
@@ -7,8 +12,4 @@ SubViewportContainer
 SubViewport
 CollisionShape2D
 CharacterBody2D
-Node2D
 StaticBody2D
-Area2D
-Polygon2D
-Camera2D

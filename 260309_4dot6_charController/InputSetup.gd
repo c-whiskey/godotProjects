@@ -29,6 +29,7 @@ func setup_input_map():
 	
 	add_action_key("kick", KEY_F)
 	add_action_key("spell_slot", KEY_E)
+	add_action_mouse_button("light_attack", MOUSE_BUTTON_LEFT)
 	
 func setup_controller_input_map():
 	# Movement (Left Stick)
@@ -63,12 +64,11 @@ func add_action_key(action_name: String, keycode: Key):
 func add_action_controller_button(action_name: String, button: JoyButton):
 	if not InputMap.has_action(action_name):
 		InputMap.add_action(action_name)
-
+	InputEventMouseButton
 	var event := InputEventJoypadButton.new()
 	event.button_index = button
 
 	InputMap.action_add_event(action_name, event)
-
 
 func add_action_controller_axis(action_name: String, axis: JoyAxis, direction: float):
 	if not InputMap.has_action(action_name):
@@ -78,4 +78,12 @@ func add_action_controller_axis(action_name: String, axis: JoyAxis, direction: f
 	event.axis = axis
 	event.axis_value = direction
 
+	InputMap.action_add_event(action_name, event)
+
+func add_action_mouse_button(action_name: String, button: MouseButton):
+	if not InputMap.has_action(action_name):
+		InputMap.add_action(action_name)
+
+	var event := InputEventMouseButton.new()
+	event.button_index = button
 	InputMap.action_add_event(action_name, event)

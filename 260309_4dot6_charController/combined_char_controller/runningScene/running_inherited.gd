@@ -1,9 +1,10 @@
 extends Node3D
 
 signal animation_event(event_name)
+signal animation_finished(animation_name)
 
 func animationCall():
-	$AnimationPlayer.play("universialAnimations/Jump",0.2)
+	#$AnimationPlayer.play("universialAnimations_2/Sword_Regular_A",0.2)
 	pass
 
 func emit_anim_event(event_name : String):
@@ -27,3 +28,10 @@ var anims = [
 "universialAnimations_2/ClimbUp_1m_RM",
 "universialAnimations/Death01"
 ]
+
+
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	animation_finished.emit(anim_name)
+	pass # Replace with function body.

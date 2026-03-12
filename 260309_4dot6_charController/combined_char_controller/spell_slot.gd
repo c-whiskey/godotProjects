@@ -4,7 +4,6 @@ extends Node
 @export var moveController :MovementController
 
 func physics_update(delta : float):
-
 # intention is for spell slot to call a child scene for the active spell
 # eg, heal flask, speed flask, etc etc
 # maybe I can  just leave it as heal for now...
