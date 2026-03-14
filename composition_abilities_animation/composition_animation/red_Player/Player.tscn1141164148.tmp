@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4n22yh86ci6s"]
+[gd_scene load_steps=7 format=3 uid="uid://cvboky6pqlyk0"]
 
-[ext_resource type="Script" uid="uid://gc2xa5srgjso" path="res://Player/Player.gd" id="1"]
-[ext_resource type="Script" uid="uid://dh5w1wievwifx" path="res://red_Player/Sprite.gd" id="2_wx1d0"]
+[ext_resource type="Script" uid="uid://ccp1n6qeb42s8" path="res://Player/Player.gd" id="1"]
+[ext_resource type="Script" uid="uid://dh5w1wievwifx" path="res://Player/Sprite.gd" id="2"]
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(32, 32)
@@ -45,18 +45,21 @@ _data = {
 &"Land": SubResource("4")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 10
 collision_mask = 15
 floor_snap_length = 16.0
 script = ExtResource("1")
+speed = null
+jump_velocity = null
+gravity = null
 
 [node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("2")
 
 [node name="Sprite" type="Node2D" parent="."]
 position = Vector2(0, 8)
-script = ExtResource("2_wx1d0")
+script = ExtResource("2")
 player_path = NodePath("..")
 
 [node name="Polygon2D" type="Polygon2D" parent="Sprite"]

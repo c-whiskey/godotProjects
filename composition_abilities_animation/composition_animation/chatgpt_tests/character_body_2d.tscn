@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjy0qfc8angyd"]
+
+[ext_resource type="Script" uid="uid://bsxplq4pesc6v" path="res://chatgpt_tests/charCont.gd" id="1_cd3kh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v34ct"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cd3kh"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_cd3kh")
+jump_force = -500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v34ct")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.450236, 0.68187, 0.765796, 1)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-5, -5)
+scale = Vector2(0.135, 0.135)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(5, -5)
+scale = Vector2(0.135, 0.135)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cd3kh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -31.0
+offset_right = 46.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "test"
+horizontal_alignment = 1

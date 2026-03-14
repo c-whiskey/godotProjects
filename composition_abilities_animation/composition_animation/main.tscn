@@ -1,19 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://nntwt4x0d6wf"]
+[gd_scene load_steps=13 format=3 uid="uid://nntwt4x0d6wf"]
 
-[ext_resource type="PackedScene" uid="uid://cvboky6pqlyk0" path="res://Player/Player.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cvboky6pqlyk0" path="res://red_Player/red_Player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://c7nuc4cwhw85l" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://h7iufcc6p005" path="res://Player/white_platform.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://h7iufcc6p005" path="res://red_Player/white_platform.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c4n22yh86ci6s" path="res://Player/Player.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://6qp4wlivqhxj" path="res://MeatBoy/supermeat_boy.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ge37gygtkw3j" path="res://dead_cells/dead_cells.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dhyfuurd25pgb" path="res://meat_2/meat_2.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://e4qck8s60df1" path="res://composition_character/composition_char.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://d18vwfcgqthy2" path="res://link_smash/link_smashbros.tscn" id="9_kek77"]
+[ext_resource type="Script" uid="uid://dku0kldkxyyea" path="res://printinput.gd" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://cjy0qfc8angyd" path="res://chatgpt_tests/character_body_2d.tscn" id="10_efxa6"]
+[ext_resource type="PackedScene" uid="uid://c33dlcqugi4ov" path="res://0903_charCont_states/character_body_2d.tscn" id="11_dg77c"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_h2yge")
 
-[node name="Player" parent="." instance=ExtResource("1_0xm2m")]
-position = Vector2(366, 197)
+[node name="Player" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(838, 343)
+
+[node name="Player2" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(731, 328)
+
+[node name="red" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(189, 328)
 
 [node name="platforms" type="Node2D" parent="."]
 
 [node name="StaticBody2D" parent="platforms" instance=ExtResource("2_h2yge")]
 position = Vector2(368, 342)
+
+[node name="StaticBody2D6" parent="platforms" instance=ExtResource("2_h2yge")]
+position = Vector2(-363, 207)
+rotation = 1.55506
+scale = Vector2(3.29, 1)
 
 [node name="StaticBody2D2" parent="platforms" instance=ExtResource("2_h2yge")]
 position = Vector2(535, 226)
@@ -27,3 +47,46 @@ position = Vector2(9, 88)
 [node name="StaticBody2D5" parent="platforms" instance=ExtResource("2_h2yge")]
 position = Vector2(320, 568)
 scale = Vector2(21.2404, 0.898668)
+
+[node name="platforms2" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="platforms2" instance=ExtResource("2_h2yge")]
+position = Vector2(368, 342)
+
+[node name="StaticBody2D2" parent="platforms2" instance=ExtResource("2_h2yge")]
+position = Vector2(535, 226)
+
+[node name="StaticBody2D3" parent="platforms2" instance=ExtResource("2_h2yge")]
+position = Vector2(111, 403)
+
+[node name="StaticBody2D4" parent="platforms2" instance=ExtResource("2_h2yge")]
+position = Vector2(9, 88)
+
+[node name="StaticBody2D5" parent="platforms2" instance=ExtResource("2_h2yge")]
+position = Vector2(320, 568)
+scale = Vector2(21.2404, 0.898668)
+
+[node name="supermeatBoy" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(345, 270)
+
+[node name="dead_cells" parent="." instance=ExtResource("6_7mycd")]
+
+[node name="meat_2" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(220, 115)
+
+[node name="composition_char" parent="." instance=ExtResource("8_5vw27")]
+position = Vector2(172, 116)
+
+[node name="link_smashbros" parent="." instance=ExtResource("9_kek77")]
+position = Vector2(59, 21)
+
+[node name="chatgtpcharcon" parent="." instance=ExtResource("10_efxa6")]
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("11_dg77c")]
+position = Vector2(-46, 14)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
+position_smoothing_enabled = true
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("10_4c57u")

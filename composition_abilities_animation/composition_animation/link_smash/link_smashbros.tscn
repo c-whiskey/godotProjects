@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d18vwfcgqthy2"]
+
+[ext_resource type="Script" uid="uid://3fplts568nxy" path="res://link_smash/link_smashbros.gd" id="1_lt3lx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lt3lx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt3lx"]
+size = Vector2(32, 32)
+
+[node name="link_smashbros" type="CharacterBody2D"]
+script = ExtResource("1_lt3lx")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = SubResource("CanvasTexture_lt3lx")
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite"]
+position = Vector2(0, -8)
+color = Color(0, 0.866667, 0.568627, 1)
+polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Sprite"]
+polygon = PackedVector2Array(3, -19, 3, -14, 11, -14, 11, -21, 3, -21, 3, -20, 3, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lt3lx")
