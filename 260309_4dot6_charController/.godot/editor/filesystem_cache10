@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1773303095
+::res://::1773312942
 icon.svg::CompressedTexture2D::1790880795757653::1773040659::1773040668::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 InputSetup.gd::GDScript::281536695393060276::1773301921::0::1::::<>Node<><>0<>0<><>::
 main.tscn::PackedScene::2615120900256951109::1773299021::0::1::::<><><>0<>0<><>::uid://c33dlcqugi4ov::::res://0903_charCont_states/character_body_2d.tscn<>uid://b6swochgjvvd0::::res://combined_char_controller/combined_char.tscn
@@ -20,9 +20,9 @@ jump_state.gd::GDScript::732172694769348799::1773139818::0::1::::<>Node<><>0<>0<
 roll.gd::GDScript::1803553212909463655::1773139826::0::1::::<>Node<><>0<>0<><>::
 run_state.gd::GDScript::8335984939564941656::1773139809::0::1::::<>Node<><>0<>0<><>::
 wall_jump_state.gd::GDScript::4915697116584169576::1773139822::0::1::::<>Node<><>0<>0<><>::
-::res://combined_char_controller/::1773303030
+::res://combined_char_controller/::1773307558
 air_control.gd::GDScript::928918636344534090::1773170430::0::1::::<>Node<><>0<>0<><>::
-combined_char.tscn::PackedScene::4600794527146532235::1773303030::0::1::::<><><>0<>0<><>::uid://pugsj1jkdrbc::::res://combined_char_controller/runningScene/runningInherited.tscn<>uid://1r4iqj6aac54::::res://combined_char_controller/movement_controller.gd<>uid://b554pbkial2p4::::res://combined_char_controller/idle.gd<>uid://nr6cxasniinq::::res://combined_char_controller/run.gd<>uid://c73wc7wetxyca::::res://combined_char_controller/gravity.gd<>uid://bj605v1vvifsw::::res://combined_char_controller/jump.gd<>uid://nh8fiju6r3qc::::res://combined_char_controller/air_control.gd<>uid://c7lram7x1bnbm::::res://combined_char_controller/ground_friction.gd<>uid://cy4v3cja10gex::::res://combined_char_controller/spell_slot.gd<>uid://dgr81temt7cdr::::res://combined_char_controller/movement_ability.gd<>uid://chcob0x15a4o6::::res://combined_char_controller/light_attack.gd
+combined_char.tscn::PackedScene::4600794527146532235::1773307558::0::1::::<><><>0<>0<><>::uid://pugsj1jkdrbc::::res://combined_char_controller/runningScene/runningInherited.tscn<>uid://1r4iqj6aac54::::res://combined_char_controller/movement_controller.gd<>uid://b554pbkial2p4::::res://combined_char_controller/idle.gd<>uid://nr6cxasniinq::::res://combined_char_controller/run.gd<>uid://c73wc7wetxyca::::res://combined_char_controller/gravity.gd<>uid://bj605v1vvifsw::::res://combined_char_controller/jump.gd<>uid://nh8fiju6r3qc::::res://combined_char_controller/air_control.gd<>uid://c7lram7x1bnbm::::res://combined_char_controller/ground_friction.gd<>uid://cy4v3cja10gex::::res://combined_char_controller/spell_slot.gd<>uid://dgr81temt7cdr::::res://combined_char_controller/movement_ability.gd<>uid://chcob0x15a4o6::::res://combined_char_controller/light_attack.gd
 gravity.gd::GDScript::7078028001286549772::1773170905::0::1::::<>Node<><>0<>0<><>::
 ground_friction.gd::GDScript::7042625388768682730::1773172452::0::1::::<>Node<><>0<>0<><>::
 idle.gd::GDScript::4555804973490008543::1773220331::0::1::::<>Node<><>0<>0<><>::
@@ -32,9 +32,9 @@ movement_ability.gd::GDScript::7617540630824080303::1773265717::0::1::::<>Node<>
 movement_controller.gd::GDScript::1861780291234668353::1773303030::0::1::::MovementController<>Node<><>0<>0<><>::
 run.gd::GDScript::949436396349594810::1773218603::0::1::::<>Node<><>0<>0<><>::
 spell_slot.gd::GDScript::6518565747629820127::1773301758::0::1::::<>Node<><>0<>0<><>::
-::res://combined_char_controller/runningScene/::1773302566
-runningInherited.tscn::PackedScene::1094517169196054080::1773302566::0::1::::<><><>0<>0<><>::uid://3701g37sdhe6::::res://combined_char_controller/runningScene/running_inherited.gd<>uid://dumgwmn1y84le::::res://combined_char_controller/runningScene/universialAnimations.res<>uid://cpyc5pms1xfl6::::res://combined_char_controller/runningScene/universialAnimations_2.res
-running_inherited.gd::GDScript::2032912425328246779::1773302494::0::1::::<>Node3D<><>0<>0<><>::
+::res://combined_char_controller/runningScene/::1773309758
+runningInherited.tscn::PackedScene::1094517169196054080::1773309758::0::1::::<><><>0<>0<><>::uid://3701g37sdhe6::::res://combined_char_controller/runningScene/running_inherited.gd<>uid://dumgwmn1y84le::::res://combined_char_controller/runningScene/universialAnimations.res<>uid://cpyc5pms1xfl6::::res://combined_char_controller/runningScene/universialAnimations_2.res
+running_inherited.gd::GDScript::2032912425328246779::1773303167::0::1::::<>Node3D<><>0<>0<><>::
 test.tscn::PackedScene::3205868414149565310::1773051972::0::1::::<><><>0<>0<><>::
 universialAnimations.res::AnimationLibrary::8588215697888557814::1773052752::0::1::::<><><>0<>0<><>::
 universialAnimations_2.res::AnimationLibrary::5875394903098200001::1773258859::0::1::::<><><>0<>0<><>::
