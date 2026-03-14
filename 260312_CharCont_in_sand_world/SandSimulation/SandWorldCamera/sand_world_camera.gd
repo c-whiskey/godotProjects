@@ -1,8 +1,8 @@
 extends Camera2D
 
-@export var SandWorldRef : SandWorld
+@export var SandSimRef : SandSimulation
 @onready var canvas := %Canvas
-var SandSimRef : SandSimulation
+
 #@onready var SandSimRef : SandSimulation = SandWorldRef.sand_simulation
 
 func _process(_delta: float) -> void:
@@ -28,7 +28,6 @@ func repaint_canvas():
 
 func _ready() -> void:
 	await get_tree().get_root().ready
-	SandSimRef = SandWorldRef.sand_simulation
 
 	var initImage = Image.create(CommonReference.viewport_width,CommonReference.viewport_height, false, Image.FORMAT_RGB8)
 	canvas.texture = ImageTexture.create_from_image(initImage)

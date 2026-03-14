@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bdi1wn8mjcjfx"]
 
 [ext_resource type="PackedScene" uid="uid://c33dlcqugi4ov" path="res://0903_charCont_states/character_body_2d.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://r21dnmwffacv" path="res://sand_simulation.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b6swochgjvvd0" path="res://combined_char_controller/combined_char.tscn" id="3_h2yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
@@ -189,3 +190,6 @@ position = Vector2(-1, -77)
 [node name="Combined_char" parent="." unique_id=1656390516 instance=ExtResource("3_h2yge")]
 
 [node name="Camera2D" type="Camera2D" parent="Combined_char" unique_id=1293827004]
+
+[node name="SandSimulation" type="SandSimulation" parent="." unique_id=1760397803]
+script = ExtResource("3_1bvp3")

@@ -5,7 +5,7 @@ extends Node
 @onready var canvas: Canvas = get_tree().get_root().get_node("Main/%Canvas")
 #@onready var painter: Painter = get_tree().get_root().get_node("Main/%Painter")
 #@onready var element_manager: ElementManager = get_tree().get_root().get_node("Main/%ElementManager")
-@onready var SandWorldRef : SandWorld #= get_tree().get_root().get_node("SandWorld")
+@onready var SandWorldRef : SandSimulation #= get_tree().get_root().get_node("SandWorld")
 
 # not sure where to put these really.
 @onready var viewport_width : int = 192 * 2# x
@@ -17,7 +17,7 @@ extends Node
 # I'm going to need something like this >:(
 
 func _ready() -> void:
-	SandWorldRef= get_tree().get_root().get_node("main/SandWorld")
+	SandWorldRef= get_tree().get_root().get_node("main/SandSimulation")
 	#prints("IS SAND ACTIVE", SandWorldRef.active)
 	#await get_tree().get_root().ready
 	

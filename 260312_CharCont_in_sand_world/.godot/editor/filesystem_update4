@@ -1,14 +1,7 @@
 res://main.tscn
-res://CharScene/character.tscn
-res://CharScene/canvas/canvas.gd
-res://SandSimulation/sand_simulation.tscn
+res://README.md
 res://SandSimulation/sand_simulation.gd
-res://SandSimulation/sand_world.tscn
-res://SandSimulation/sand_world.gd
-res://CharScene/character/character.gd
 res://CharScene/main.gd
-res://SandSimulation/SandWorldCamera/sand_world_camera.tscn
-res://SandSimulation/SandWorldCamera/sand_world_camera.gd
-res://combined_char_controller/combined_char.tscn
-res://combined_char_controller/sand_resolver.gd
 res://CharScene/common_reference.gd
+res://combined_char_controller/sand_resolver.gd
+res://SandSimulation/SandWorldCamera/sand_world_camera.gd

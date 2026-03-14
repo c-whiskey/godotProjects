@@ -104,6 +104,17 @@ script = ExtResource("12_3hatf")
 player = NodePath("../..")
 moveController = NodePath("..")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=472264370]
+texture_filter = 1
+offset_left = -74.0
+offset_top = -35.0
+offset_right = 74.0
+offset_bottom = 5.0
+text = "test"
+horizontal_alignment = 1
+
+[node name="TESTING_BELOW" type="Node" parent="." unique_id=1597397670]
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=141600101]
 modulate = Color(1, 0, 0.41568628, 1)
 texture_filter = 1
@@ -114,14 +125,9 @@ offset_bottom = 48.0
 text = "test"
 horizontal_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=472264370]
-texture_filter = 1
-offset_left = -74.0
-offset_top = -35.0
-offset_right = 74.0
-offset_bottom = 5.0
-text = "test"
-horizontal_alignment = 1
+[node name="Line2D" type="Line2D" parent="." unique_id=589969827]
+points = PackedVector2Array(2, 14, 22, 15)
+width = 1.0
 
 [connection signal="animation_event" from="SubViewportContainer/SubViewport/Running" to="MovementController" method="_on_animation_player_event"]
 [connection signal="animation_finished" from="SubViewportContainer/SubViewport/Running" to="MovementController" method="_on_animation_player_animation_finished"]

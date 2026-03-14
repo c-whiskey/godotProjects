@@ -1,8 +1,8 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1773440554
+::res://::1773527908
 icon.svg::CompressedTexture2D::1790880795757653::1773040659::1773040668::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 InputSetup.gd::GDScript::281536695393060276::1773301921::0::1::::<>Node<><>0<>0<><>::
-main.tscn::PackedScene::2615120900256951109::1773440554::0::1::::<><><>0<>0<><>::uid://bio4i37yp51bb::::res://CharScene/main.gd<>uid://c33dlcqugi4ov::::res://0903_charCont_states/character_body_2d.tscn<>uid://cl0d0qjv3mwi5::::res://CharScene/character.tscn<>uid://b6swochgjvvd0::::res://combined_char_controller/combined_char.tscn<>uid://4q335xxs2p::::res://icon.svg<>uid://chy6s6secpquq::::res://SandSimulation/sand_world.tscn
+main.tscn::PackedScene::2615120900256951109::1773462804::0::1::::<><><>0<>0<><>::uid://bio4i37yp51bb::::res://CharScene/main.gd<>uid://b6swochgjvvd0::::res://combined_char_controller/combined_char.tscn<>uid://vh8ijgwud5el::::res://SandSimulation/SandWorldCamera/sand_world_camera.tscn<>uid://4q335xxs2p::::res://icon.svg<>uid://chy6s6secpquq::::res://SandSimulation/sand_world.tscn
 running.gdshader::Shader::306047797021221517::1770804762::0::1::::<><><>0<>0<><>::
 ::res://3d/::1773314163
 Running.fbx::PackedScene::2532942511632187927::1770367628::1773043423::1::::<><><>0<>0<>149f8692bb568551f938eb69696de08f<>res://.godot/imported/Running.fbx-3020a94fd28540442a6212e83e485372.scn::
@@ -21,19 +21,19 @@ roll.gd::GDScript::1803553212909463655::1773139826::0::1::::<>Node<><>0<>0<><>::
 run_state.gd::GDScript::8335984939564941656::1773139809::0::1::::<>Node<><>0<>0<><>::
 wall_jump_state.gd::GDScript::4915697116584169576::1773139822::0::1::::<>Node<><>0<>0<><>::
 ::res://bin/::1773314198
-::res://bin/fallingsand/::1773385280
+::res://bin/fallingsand/::1773527904
 gd_sand.gdextension::GDExtension::8076041458405804334::1766885254::0::1::::<><><>0<>0<><>::
-::res://CharScene/::1773440471
-character.tscn::PackedScene::5596755742350875270::1773440471::0::1::::<><><>0<>0<><>::uid://do4se787bc76y::::res://CharScene/character/character.gd<>uid://bnkbmrkshi5x0::::res://CharScene/canvas/canvas.gd
-common_reference.gd::GDScript::3800189198680600535::1773315436::0::1::::<>Node<><>0<>0<><>::
-main.gd::GDScript::2978609321694913387::1773315752::0::1::::Main<>Node2D<><>0<>0<><>::
-::res://CharScene/canvas/::1773437506
-canvas.gd::GDScript::3319602484220283535::1773437506::0::1::::Canvas<>TextureRect<><>0<>0<><>::
-::res://CharScene/character/::1773315939
-character.gd::GDScript::8202874599106042902::1773315939::0::1::::<>RigidBody2D<><>0<>0<><>::
-::res://combined_char_controller/::1773314163
+::res://CharScene/::1773451084
+character.tscn::PackedScene::5596755742350875270::1773451084::0::1::::<><><>0<>0<><>::uid://do4se787bc76y::::res://CharScene/character/character.gd<>uid://vh8ijgwud5el::::res://SandSimulation/SandWorldCamera/sand_world_camera.tscn
+common_reference.gd::GDScript::3800189198680600535::1773449859::0::1::::<>Node<><>0<>0<><>::
+main.gd::GDScript::2978609321694913387::1773449216::0::1::::Main<>Node2D<><>0<>0<><>::
+::res://CharScene/canvas/::1773446276
+canvas.gd::GDScript::3319602484220283535::1773446276::0::1::::Canvas<>TextureRect<><>0<>0<><>::
+::res://CharScene/character/::1773446675
+character.gd::GDScript::8202874599106042902::1773446675::0::1::::<>RigidBody2D<><>0<>0<><>::
+::res://combined_char_controller/::1773475682
 air_control.gd::GDScript::928918636344534090::1773170430::0::1::::<>Node<><>0<>0<><>::
-combined_char.tscn::PackedScene::4600794527146532235::1773307558::0::1::::<><><>0<>0<><>::uid://pugsj1jkdrbc::::res://combined_char_controller/runningScene/runningInherited.tscn<>uid://1r4iqj6aac54::::res://combined_char_controller/movement_controller.gd<>uid://b554pbkial2p4::::res://combined_char_controller/idle.gd<>uid://nr6cxasniinq::::res://combined_char_controller/run.gd<>uid://c73wc7wetxyca::::res://combined_char_controller/gravity.gd<>uid://bj605v1vvifsw::::res://combined_char_controller/jump.gd<>uid://nh8fiju6r3qc::::res://combined_char_controller/air_control.gd<>uid://c7lram7x1bnbm::::res://combined_char_controller/ground_friction.gd<>uid://cy4v3cja10gex::::res://combined_char_controller/spell_slot.gd<>uid://dgr81temt7cdr::::res://combined_char_controller/movement_ability.gd<>uid://chcob0x15a4o6::::res://combined_char_controller/light_attack.gd
+combined_char.tscn::PackedScene::4600794527146532235::1773475682::0::1::::<><><>0<>0<><>::uid://pugsj1jkdrbc::::res://combined_char_controller/runningScene/runningInherited.tscn<>uid://1r4iqj6aac54::::res://combined_char_controller/movement_controller.gd<>uid://b554pbkial2p4::::res://combined_char_controller/idle.gd<>uid://nr6cxasniinq::::res://combined_char_controller/run.gd<>uid://c73wc7wetxyca::::res://combined_char_controller/gravity.gd<>uid://bj605v1vvifsw::::res://combined_char_controller/jump.gd<>uid://nh8fiju6r3qc::::res://combined_char_controller/air_control.gd<>uid://c7lram7x1bnbm::::res://combined_char_controller/ground_friction.gd<>uid://cy4v3cja10gex::::res://combined_char_controller/spell_slot.gd<>uid://dgr81temt7cdr::::res://combined_char_controller/movement_ability.gd<>uid://chcob0x15a4o6::::res://combined_char_controller/light_attack.gd<>uid://c74f2qu3gv551::::res://combined_char_controller/sand_resolver.gd
 gravity.gd::GDScript::7078028001286549772::1773170905::0::1::::<>Node<><>0<>0<><>::
 ground_friction.gd::GDScript::7042625388768682730::1773172452::0::1::::<>Node<><>0<>0<><>::
 idle.gd::GDScript::4555804973490008543::1773220331::0::1::::<>Node<><>0<>0<><>::
@@ -42,6 +42,7 @@ light_attack.gd::GDScript::5269145201888884047::1773302993::0::1::::<>Node<><>0<
 movement_ability.gd::GDScript::7617540630824080303::1773265717::0::1::::<>Node<><>0<>0<><>::
 movement_controller.gd::GDScript::1861780291234668353::1773303030::0::1::::MovementController<>Node<><>0<>0<><>::
 run.gd::GDScript::949436396349594810::1773218603::0::1::::<>Node<><>0<>0<><>::
+sand_resolver.gd::GDScript::7079103992620998038::1773451651::0::1::::<>Node<><>0<>0<><>::
 spell_slot.gd::GDScript::6518565747629820127::1773301758::0::1::::<>Node<><>0<>0<><>::
 ::res://combined_char_controller/runningScene/::1773314163
 runningInherited.tscn::PackedScene::1094517169196054080::1773312960::0::1::::<><><>0<>0<><>::uid://3701g37sdhe6::::res://combined_char_controller/runningScene/running_inherited.gd<>uid://dumgwmn1y84le::::res://combined_char_controller/runningScene/universialAnimations.res<>uid://cpyc5pms1xfl6::::res://combined_char_controller/runningScene/universialAnimations_2.res
@@ -73,9 +74,12 @@ anim__Quick Roll To Run.res::AnimationLibrary::4861501221608219656::1771792891::
 anim__Standing Melee Kick (1).res::AnimationLibrary::1971973477412431086::1772262654::0::1::::<><><>0<>0<><>::
 anim__Standing Melee Kick.res::AnimationLibrary::8915130556872453301::1771792892::0::1::::<><><>0<>0<><>::
 anim__Thriller Part 3.res::AnimationLibrary::9054582013129793537::1771792893::0::1::::<><><>0<>0<><>::
-::res://SandSimulation/::1773440554
-sand_simulation.gd::GDScript::5329105626295231973::1773440534::0::1::::SandWorld<>Node<><>0<>0<><>::
-sand_world.tscn::PackedScene::5315624366231269008::1773440558::0::1::::<><><>0<>0<><>::uid://ch6pudjsewpbx::::res://SandSimulation/sand_simulation.gd
+::res://SandSimulation/::1773449331
+sand_world.gd::GDScript::5329105626295231973::1773449326::0::1::::SandWorld<>Node<><>0<>0<><>::
+sand_world.tscn::PackedScene::5315624366231269008::1773449331::0::1::::<><><>0<>0<><>::uid://ch6pudjsewpbx::::res://SandSimulation/sand_world.gd
+::res://SandSimulation/SandWorldCamera/::1773447184
+sand_world_camera.gd::GDScript::7809187576897567128::1773446506::0::1::::<>Camera2D<><>0<>0<><>::
+sand_world_camera.tscn::PackedScene::1490434790795067555::1773447184::0::1::::<><><>0<>0<><>::uid://dji3gcj8y6d25::::res://SandSimulation/SandWorldCamera/sand_world_camera.gd
 ::res://testAnims/::1773314163
 lib__lib__Thriller Part 3.res::AnimationLibrary::8167216329575788100::1770891102::0::1::::<><><>0<>0<><>::
 UAL1_animations.res::AnimationLibrary::6033847669194890694::1770925555::0::1::::<><><>0<>0<><>::

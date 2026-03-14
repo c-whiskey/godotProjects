@@ -20,10 +20,7 @@ func _ready() -> void:
 
 
 #Made with Godot 
-func _on_timer_timeout():
-	var timeStart = Time.get_unix_time_from_system()
-	var timeStop = Time.get_unix_time_from_system() - timeStart
-	$Timer.start() 
+
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
