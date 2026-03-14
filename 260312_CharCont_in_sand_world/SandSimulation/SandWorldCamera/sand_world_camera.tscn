@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://vh8ijgwud5el"]
+
+[ext_resource type="Script" uid="uid://dji3gcj8y6d25" path="res://SandSimulation/SandWorldCamera/sand_world_camera.gd" id="1_fur6u"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ilg8f"]
+
+[node name="SandWorldCamera" type="Camera2D" unique_id=851781165]
+process_priority = 3
+process_physics_priority = 3
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+script = ExtResource("1_fur6u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1736288332]
+layer = -1
+
+[node name="Canvas" type="TextureRect" parent="CanvasLayer" unique_id=1822108369]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+offset_right = 192.0
+offset_bottom = 128.0
+size_flags_stretch_ratio = 2.0
+texture = SubResource("CanvasTexture_ilg8f")
+expand_mode = 1
+stretch_mode = 3

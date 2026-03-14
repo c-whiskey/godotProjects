@@ -1,11 +1,13 @@
 extends RigidBody2D
 
-
 var speed = 1
 var gravity = 2
 
 var mover = Vector2.ZERO
 var jump_time_to_descent := 2.0 
+
+@export var SandWorldRef : SandWorld
+var SandSimRef : SandSimulation
 
 #@onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
@@ -37,19 +39,21 @@ var jump_cut_multiplier := 0.45   # 0.0 = instant stop, 1.0 = no short hop
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	await get_tree().get_root().ready
+	SandSimRef = SandWorldRef.sand_simulation
 	pass # Replace with function body.
 
 func is_intersecting_terrain():
 	# this is becoming computationally shithouse
 	var topLeft = position-$CollisionShape2D.shape.get_rect().size/2
 	var botRight = $CollisionShape2D.shape.get_rect().size/2 + position
-	var elementData = CommonReference.main.sim.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
+	var elementData = SandSimRef.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
 	var dimX = botRight.x - topLeft.x
 	var dimY = botRight.y - topLeft.y
 	var pushout = Vector2.ZERO
 	#account for 
 	var playPos = Vector2(dimX/2, dimY/2)
-	prints("topLeft",topLeft," - botRight",botRight, " - dimX", dimX," - dimY", dimY," - playPos",playPos )
+	#prints("topLeft",topLeft," - botRight",botRight, " - dimX", dimX," - dimY", dimY," - playPos",playPos )
 	for y in dimY:
 		for x in dimX:
 			var index = (y*dimX+x)
@@ -66,13 +70,13 @@ func push_char_from_terrain():
 	print(" ")
 	var topLeft = position-$CollisionShape2D.shape.get_rect().size/2
 	var botRight = $CollisionShape2D.shape.get_rect().size/2 + position
-	var elementData = CommonReference.main.sim.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
+	var elementData = SandSimRef.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
 	var dimX = botRight.x - topLeft.x
 	var dimY = botRight.y - topLeft.y
 	var pushout = Vector2.ZERO
 	#account for 
 	var playPos = Vector2(dimX/2, dimY/2)
-	prints("topLeft",topLeft," - botRight",botRight, " - dimX", dimX," - dimY", dimY," - playPos",playPos )
+	#prints("topLeft",topLeft," - botRight",botRight, " - dimX", dimX," - dimY", dimY," - playPos",playPos )
 	for y in dimY:
 		for x in dimX:
 			var index = (y*dimX+x)
@@ -97,14 +101,14 @@ func push_char_from_terrain():
 	var max = -1.0
 	var vec = Vector2.ZERO
 
-	prints("xyxy",botRight.x , topLeft.x, botRight.y , topLeft.y)
-	prints("dimX,Dimy: ",dimX,dimY)
-	prints("PlayerPos: ",playPos, " - Actual pos", position)
+	#prints("xyxy",botRight.x , topLeft.x, botRight.y , topLeft.y)
+	#prints("dimX,Dimy: ",dimX,dimY)
+	#prints("PlayerPos: ",playPos, " - Actual pos", position)
 	
-	prints("pushout",pushout, " - pushout.dot(Vector2.RIGHT): ", pushout.dot(Vector2.RIGHT))
-	prints("pushout",pushout, " - pushout.dot(Vector2.LEFT): ", pushout.dot(Vector2.LEFT))
-	prints("pushout",pushout, " - pushout.dot(Vector2.UP): ", pushout.dot(Vector2.UP))
-	prints("pushout",pushout, " - pushout.dot(Vector2.DOWN): ", pushout.dot(Vector2.DOWN))
+	#prints("pushout",pushout, " - pushout.dot(Vector2.RIGHT): ", pushout.dot(Vector2.RIGHT))
+	#printss("pushout",pushout, " - pushout.dot(Vector2.LEFT): ", pushout.dot(Vector2.LEFT))
+	#prints("pushout",pushout, " - pushout.dot(Vector2.UP): ", pushout.dot(Vector2.UP))
+	#prints("pushout",pushout, " - pushout.dot(Vector2.DOWN): ", pushout.dot(Vector2.DOWN))
 	$Line2D.clear_points()
 	$Line2D.add_point(Vector2.ZERO)
 	$Line2D.add_point(pushout * 5)
@@ -154,8 +158,8 @@ func tidy_drawCharacterOnImage():
 	var dimX = botRight.x - topLeft.x
 	var dimY = botRight.y - topLeft.y
 	
-	var elementData = CommonReference.main.sim.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
-	var imData = CommonReference.main.sim.get_colour_image(topLeft.x,topLeft.y,botRight.x,botRight.y)
+	var elementData = SandSimRef.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
+	var imData = SandSimRef.get_colour_image(topLeft.x,topLeft.y,botRight.x,botRight.y)
 	
 	for index in imData.size():
 		imData[index] = 255#*index#(imData[index]*2)# % 255
@@ -184,7 +188,7 @@ func is_ground_below_character():
 	var dimX = botRight.x - topLeft.x
 	var dimY = botRight.y - topLeft.y
 	
-	var elementData = CommonReference.main.sim.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
+	var elementData = SandSimRef.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
 	for x in elementData:
 		if x != 0:
 			return true #print(x)
@@ -207,7 +211,7 @@ func is_on_ground():
 	var dimX = botRight.x - topLeft.x
 	var dimY = botRight.y - topLeft.y
 	
-	var elementData = CommonReference.main.sim.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
+	var elementData = SandSimRef.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
 	for x in elementData:
 		if x != 0:
 			return true #print(x)
@@ -219,13 +223,13 @@ func resolve_terrain_conflict():
 
 	var topLeft = position-$CollisionShape2D.shape.get_rect().size/2
 	var botRight = $CollisionShape2D.shape.get_rect().size/2 + position
-	var elementData = CommonReference.main.sim.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
+	var elementData = SandSimRef.get_simulation_element_data(topLeft.x,topLeft.y,botRight.x,botRight.y)
 	var dimX = botRight.x - topLeft.x
 	var dimY = botRight.y - topLeft.y
 	var pushout = Vector2.ZERO
 	#account for 
 	var playPos = Vector2(dimX/2, dimY/2)
-	prints("topLeft",topLeft," - botRight",botRight, " - dimX", dimX," - dimY", dimY," - playPos",playPos )
+	#prints("topLeft",topLeft," - botRight",botRight, " - dimX", dimX," - dimY", dimY," - playPos",playPos )
 	for y in dimY:
 		for x in dimX:
 			var index = (y*dimX+x)
@@ -250,14 +254,14 @@ func resolve_terrain_conflict():
 	var max = -1.0
 	var vec = Vector2.ZERO
 
-	prints("xyxy",botRight.x , topLeft.x, botRight.y , topLeft.y)
-	prints("dimX,Dimy: ",dimX,dimY)
-	prints("PlayerPos: ",playPos, " - Actual pos", position)
+	#prints("xyxy",botRight.x , topLeft.x, botRight.y , topLeft.y)
+	#prints("dimX,Dimy: ",dimX,dimY)
+	#prints("PlayerPos: ",playPos, " - Actual pos", position)
 	
-	prints("pushout",pushout, " - pushout.dot(Vector2.RIGHT): ", pushout.dot(Vector2.RIGHT))
-	prints("pushout",pushout, " - pushout.dot(Vector2.LEFT): ", pushout.dot(Vector2.LEFT))
-	prints("pushout",pushout, " - pushout.dot(Vector2.UP): ", pushout.dot(Vector2.UP))
-	prints("pushout",pushout, " - pushout.dot(Vector2.DOWN): ", pushout.dot(Vector2.DOWN))
+	#prints("pushout",pushout, " - pushout.dot(Vector2.RIGHT): ", pushout.dot(Vector2.RIGHT))
+	#prints("pushout",pushout, " - pushout.dot(Vector2.LEFT): ", pushout.dot(Vector2.LEFT))
+	#prints("pushout",pushout, " - pushout.dot(Vector2.UP): ", pushout.dot(Vector2.UP))
+	#prints("pushout",pushout, " - pushout.dot(Vector2.DOWN): ", pushout.dot(Vector2.DOWN))
 	$Line2D.clear_points()
 	$Line2D.add_point(Vector2.ZERO)
 	$Line2D.add_point(pushout * 5)
@@ -281,7 +285,7 @@ func resolve_terrain_conflict():
 		vec = Vector2.DOWN
 		$Line2D.default_color = Color.GOLD
 	pushout = vec.round()
-	prints("pushout",pushout, " - MAX: ", max)
+	#prints("pushout",pushout, " - MAX: ", max)
 	#$Line2D.clear_points()
 	
 	position += pushout

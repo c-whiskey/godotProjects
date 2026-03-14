@@ -1,7 +1,8 @@
+Camera2D
 Timer
+Node
 Sprite2D
 CSGSphere3D
-Node
 Node2D
 CSGBox3D
 CSGCylinder3D
@@ -11,5 +12,3 @@ RichTextLabel
 WorldEnvironment
 Camera3D
 SubViewportContainer
-SubViewport
-CollisionShape2D

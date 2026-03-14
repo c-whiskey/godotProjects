@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://cl0d0qjv3mwi5"]
 
 [ext_resource type="Script" uid="uid://do4se787bc76y" path="res://CharScene/character/character.gd" id="1_qesvt"]
-[ext_resource type="Script" uid="uid://bnkbmrkshi5x0" path="res://CharScene/canvas/canvas.gd" id="3_fxfc2"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_ilg8f"]
+[ext_resource type="PackedScene" uid="uid://vh8ijgwud5el" path="res://SandSimulation/SandWorldCamera/sand_world_camera.tscn" id="2_qvjnp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2nly"]
 radius = 4.0
@@ -18,31 +16,8 @@ jump_time_to_peak = 0.5
 jump_pixels = 64
 jump_time_to_max_height = 0.35
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1509873978]
+[node name="SandWorldCamera" parent="." unique_id=851781165 instance=ExtResource("2_qvjnp")]
 unique_name_in_owner = true
-process_priority = 3
-process_physics_priority = 3
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1275352241]
-layer = -1
-
-[node name="Canvas" type="TextureRect" parent="Camera2D/CanvasLayer" unique_id=620116044]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 64)
-offset_right = 192.0
-offset_bottom = 128.0
-size_flags_stretch_ratio = 2.0
-texture = SubResource("CanvasTexture_ilg8f")
-expand_mode = 1
-stretch_mode = 3
-script = ExtResource("3_fxfc2")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1406111864]
 z_index = 2

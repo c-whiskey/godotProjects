@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bdi1wn8mjcjfx"]
 
 [ext_resource type="Script" uid="uid://bio4i37yp51bb" path="res://CharScene/main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://c33dlcqugi4ov" path="res://0903_charCont_states/character_body_2d.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cl0d0qjv3mwi5" path="res://CharScene/character.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b6swochgjvvd0" path="res://combined_char_controller/combined_char.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://vh8ijgwud5el" path="res://SandSimulation/SandWorldCamera/sand_world_camera.tscn" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://chy6s6secpquq" path="res://SandSimulation/sand_world.tscn" id="6_7mycd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(233, 18)
@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_ig7tw")
 polygon = PackedVector2Array(-116, -9, 116, -9, 116, 9, -116, 9)
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="platforms" unique_id=780880550]
-position = Vector2(627, 479)
+position = Vector2(625, 411)
 scale = Vector2(3.435, 1.22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/StaticBody2D6" unique_id=1327047217]
@@ -36,7 +36,7 @@ shape = SubResource("RectangleShape2D_ig7tw")
 polygon = PackedVector2Array(-116, -9, 116, -9, 116, 9, -116, 9)
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="platforms" unique_id=2131440246]
-position = Vector2(-246, 728)
+position = Vector2(-248, 660)
 scale = Vector2(3.435, 1.22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/StaticBody2D7" unique_id=484578412]
@@ -47,7 +47,7 @@ shape = SubResource("RectangleShape2D_ig7tw")
 polygon = PackedVector2Array(-116, -9, 116, -9, 116, 9, -116, 9)
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="platforms" unique_id=2048835242]
-position = Vector2(-84, 610)
+position = Vector2(-86, 456)
 scale = Vector2(3.435, 1.22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/StaticBody2D8" unique_id=611617435]
@@ -187,20 +187,20 @@ shape = SubResource("RectangleShape2D_ig7tw")
 [node name="Polygon2D" type="Polygon2D" parent="platforms/StaticBody2D4/CollisionShape2D" unique_id=872073978]
 polygon = PackedVector2Array(-116, -9, 116, -9, 116, 9, -116, 9)
 
-[node name="composition_char" parent="." unique_id=446780480 instance=ExtResource("2_0xm2m")]
-position = Vector2(-1, -77)
-
-[node name="character" parent="." unique_id=2087875966 instance=ExtResource("3_1bvp3")]
-
 [node name="Combined_char" parent="." unique_id=1656390516 instance=ExtResource("3_h2yge")]
 
-[node name="Camera2D" type="Camera2D" parent="Combined_char" unique_id=1293827004]
+[node name="SandWorldCamera" parent="Combined_char" unique_id=851781165 node_paths=PackedStringArray("SandWorldRef") instance=ExtResource("4_7mycd")]
+SandWorldRef = NodePath("../../SandWorld")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1594957408]
+visible = false
 texture = ExtResource("5_lquwl")
 
 [node name="Timer" type="Timer" parent="." unique_id=1069706241]
-wait_time = 0.009999999999999998
+wait_time = 0.00999999999999999
 autostart = true
+
+[node name="SandWorld" parent="." unique_id=1520620953 node_paths=PackedStringArray("playerNode") instance=ExtResource("6_7mycd")]
+playerNode = NodePath("../Combined_char")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
