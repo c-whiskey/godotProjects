@@ -4,6 +4,7 @@ var sim: SandSimulation
 var active: bool = false
 var chunk_size  : int = 16
 
+
 func _ready() -> void:
 	pass
 	#var image : Image = $Sprite2D.texture.get_image()

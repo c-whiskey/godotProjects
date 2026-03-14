@@ -27,7 +27,6 @@ func _on_timer_timeout():
 
 	pass # Replace with function body.
 
-
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		# Place your custom save logic or confirmation dialog here

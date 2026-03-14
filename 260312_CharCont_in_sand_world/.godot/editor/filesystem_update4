@@ -10,3 +10,5 @@ res://CharScene/main.gd
 res://SandSimulation/SandWorldCamera/sand_world_camera.tscn
 res://SandSimulation/SandWorldCamera/sand_world_camera.gd
 res://combined_char_controller/combined_char.tscn
+res://combined_char_controller/sand_resolver.gd
+res://CharScene/common_reference.gd
