@@ -176,8 +176,8 @@ func tidy_drawCharacterOnImage():
 	for y in $CollisionShape2D.shape.get_rect().size.y:
 		pass
 		
-	$Sprite2D.texture = ImageTexture.create_from_image(Image.create(dimX,dimY, false, Image.FORMAT_RGB8))
-	$Sprite2D.texture.set_image(Image.create_from_data(dimX,dimY, false, Image.FORMAT_RGB8, imData))
+	$Sprite2D.texture = ImageTexture.create_from_image(Image.create(dimX,dimY, false, Image.FORMAT_RGBA8))
+	$Sprite2D.texture.set_image(Image.create_from_data(dimX,dimY, false, Image.FORMAT_RGBA8, imData))
 
 func is_ground_below_character():
 	var topLeft = position-$CollisionShape2D.shape.get_rect().size/2

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dbuvy5kj2necb"]
+
+[ext_resource type="Script" uid="uid://byhg0e8wmavni" path="res://draggable_rb/rigid_body_2d.gd" id="1_lmctj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmctj"]
+
+[node name="DragMe" type="RigidBody2D" unique_id=2136497552]
+script = ExtResource("1_lmctj")
+
+[node name="Timer" type="Timer" parent="." unique_id=1906717904]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1418208395]
+shape = SubResource("RectangleShape2D_lmctj")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1136883784]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1473159760]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

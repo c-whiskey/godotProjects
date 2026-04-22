@@ -4,7 +4,6 @@ var sim: SandSimulation
 var active: bool = false
 var chunk_size  : int = 16
 
-
 func _ready() -> void:
 	pass
 	#var image : Image = $Sprite2D.texture.get_image()
@@ -18,9 +17,13 @@ func _ready() -> void:
 	#image.get_height()
 	#sim.make_pixels_from_image(image.get_data(), 64, 64)
 
-
 #Made with Godot 
 
+func _process(delta: float) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			if Input.is_key_pressed(KEY_SPACE):
+				$Combined_char.position = get_global_mouse_position()
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

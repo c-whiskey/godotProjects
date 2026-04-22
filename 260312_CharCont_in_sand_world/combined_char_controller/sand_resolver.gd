@@ -41,6 +41,7 @@ func is_intersecting_terrain():
 
 func update_intersecting_text():
 	$"../../RichTextLabel2".text = str(is_intersecting_terrain())
+	
 	if is_intersecting_terrain():
 		$"../../RichTextLabel2".modulate = Color.RED
 	else:
@@ -75,9 +76,9 @@ func push_char_from_terrain():
 	var vec = Vector2.ZERO
 
 	var Line2d = $"../../Line2D"
-	Line2d.clear_points()
-	Line2d.add_point(Vector2.ZERO)
-	Line2d.add_point(pushout * 5)
+	#Line2d.clear_points()
+	#Line2d.add_point(Vector2.ZERO)
+	#Line2d.add_point(pushout * 5)
 	
 	if pushout.dot(Vector2.RIGHT) > max:
 		max = pushout.dot(Vector2.RIGHT) 
@@ -104,7 +105,7 @@ func push_char_from_terrain():
 	var test_dirs = []
 	test_dirs = [Vector2(0, sign(pushout.y)), Vector2(sign(pushout.x), 0)]
 
-	Line2d.add_point(Vector2.ZERO)
-	Line2d.add_point(pushout * 5)
+	#Line2d.add_point(Vector2.ZERO)
+	#Line2d.add_point(pushout * 5)
 	
 	return true

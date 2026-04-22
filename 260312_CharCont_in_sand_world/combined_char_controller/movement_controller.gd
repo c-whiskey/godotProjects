@@ -52,7 +52,13 @@ func _physics_process(delta: float) -> void:
 			comp.physics_update(delta)
 			
 	player.move_and_slide()
+	$"../RichTextLabel3".text = str(player.velocity)
+	$"../worldChunk".text = str(floor(player.position/64))
 	
+	$"../Line2D".clear_points()
+	$"../Line2D".add_point(Vector2.ZERO)
+	$"../Line2D".add_point(player.get_floor_normal() * 25)
+	$"../Line2D".add_point(player.get_wall_normal() * 25)
 	if player.is_on_floor():
 		currentState = playerState.ON_GROUND
 	else:

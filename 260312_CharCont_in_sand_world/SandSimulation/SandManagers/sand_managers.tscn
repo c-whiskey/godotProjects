@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bpl0uch6qbqjw"]
+
+[ext_resource type="Texture2D" uid="uid://b13uojk1fhqkh" path="res://SandSimulation/SandManagers/inside.png" id="1_5y1i1"]
+[ext_resource type="Script" uid="uid://cowmxbkx2uf6b" path="res://SandSimulation/SandManagers/tile_extractor.gd" id="1_ossbw"]
+[ext_resource type="Script" uid="uid://cvys5ofok5p0n" path="res://SandSimulation/SandManagers/world_generator.gd" id="2_5y1i1"]
+[ext_resource type="Script" uid="uid://wxbp6sshtxyd" path="res://SandSimulation/SandManagers/sand_world_manager.gd" id="3_r3uf1"]
+
+[node name="SandManagers" type="Node2D" unique_id=1322396016]
+
+[node name="TileExtractor" type="TileExtractor" parent="." unique_id=192569472]
+texture = ExtResource("1_5y1i1")
+script = ExtResource("1_ossbw")
+
+[node name="WorldGenerator" type="WorldGenerator" parent="." unique_id=1206208521]
+script = ExtResource("2_5y1i1")
+
+[node name="SandWorldManager" type="SandWorldManager" parent="." unique_id=2063632068]
+script = ExtResource("3_r3uf1")
+
+[node name="Timer" type="Timer" parent="SandWorldManager" unique_id=23198190]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="SandWorldManager/Timer" to="SandWorldManager" method="_on_timer_timeout"]

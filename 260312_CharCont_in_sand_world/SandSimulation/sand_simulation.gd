@@ -17,8 +17,8 @@ func _on_timer_timeout():
 	var xMin = max(0,playerNode.position.x-96-64)
 	var yMin = max(0,playerNode.position.y-64-64)
 	
-	var xMax = min(playerNode.position.x+96+64, 512)
-	var yMax = min(playerNode.position.y+64+64, 512)
+	var xMax = min(playerNode.position.x+96+64, get_sim_world_dimensions().x)
+	var yMax = min(playerNode.position.y+64+64, get_sim_world_dimensions().y)
 	set_active_simulation_area(xMin,yMin,xMax,yMax)
 	step()
 

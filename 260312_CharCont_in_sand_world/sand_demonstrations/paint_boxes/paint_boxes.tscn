@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqwe4om2db6eo"]
+
+[ext_resource type="Script" uid="uid://bl5lfj84d5uxx" path="res://sand_demonstrations/paint_boxes/paint_boxes.gd" id="1_tjivr"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_ohwjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d2rv"]
+size = Vector2(8, 8)
+
+[node name="PaintBoxes" type="Node2D" unique_id=1962600598]
+script = ExtResource("1_tjivr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1202726721]
+shape = SubResource("RectangleShape2D_3d2rv")
+debug_color = Color(0.82585126, 0.35076603, 0.4979633, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=315169289]
+visible = false
+texture = ExtResource("2_ohwjt")

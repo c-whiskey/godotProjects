@@ -25,11 +25,11 @@ func _process(delta: float) -> void:
 	var data: PackedByteArray = CommonReference.main.sim.get_colour_image(xMin,yMin,xMax,yMax)
 	#var data: PackedByteArray = SandSim.get_colour_image(xMin,yMin,xMax,yMax)
 
-	texture.set_image(Image.create_from_data(xDim,yDim, false, Image.FORMAT_RGB8, data))
+	texture.set_image(Image.create_from_data(xDim,yDim, false, Image.FORMAT_RGBA8, data))
 	pass
 
 func _ready() -> void:
-	var initImage = Image.create(CommonReference.viewport_width,CommonReference.viewport_height, false, Image.FORMAT_RGB8)
+	var initImage = Image.create(CommonReference.viewport_width,CommonReference.viewport_height, false, Image.FORMAT_RGBA8)
 	texture = ImageTexture.create_from_image(initImage)
 	set_size(Vector2(CommonReference.viewport_width,CommonReference.viewport_height))
 	pass
